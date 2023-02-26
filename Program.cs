@@ -20,7 +20,7 @@ namespace Course
                 char ch = char.Parse(Console.ReadLine());
                 Console.Write("Name: ");
                 string name = Console.ReadLine();
-                Console.Write("`Price: ");
+                Console.Write("Price: ");
                 double price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
                
@@ -39,7 +39,13 @@ namespace Course
                 else
                 {
                     list.Add(new Product(name, price));
-                }
+                }                
+            }
+            Console.WriteLine();
+            Console.WriteLine("PRICE TAGS:");
+            foreach (Product prod in list)
+            {
+                Console.WriteLine(prod.PriceTag());
             }
         }
     }

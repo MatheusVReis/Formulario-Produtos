@@ -1,4 +1,5 @@
-﻿namespace Course.Entities
+﻿using System.Globalization;
+namespace Course.Entities
 {
     internal class ImportedProduct : Product
     {
@@ -18,7 +19,7 @@
         }
         public override string PriceTag()
         {
-            return Name + " $ " + TotalPrice() + $"(Customs fee: $ {CustomsFee})";
+            return Name + " $ " + TotalPrice().ToString("F2", CultureInfo.InvariantCulture) + $"(Customs fee: $ {CustomsFee.ToString("F2",CultureInfo.InvariantCulture)})";
         }
     }
 }

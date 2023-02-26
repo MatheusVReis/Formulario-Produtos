@@ -1,4 +1,5 @@
-﻿namespace Course.Entities
+﻿using System.Globalization;
+namespace Course.Entities
 {
     internal class Product
     {
@@ -16,7 +17,7 @@
 
         public virtual string PriceTag()
         {
-           return Name + " $ " + Price;
+           return Name + " $ " + Price.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }

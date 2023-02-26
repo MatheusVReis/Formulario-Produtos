@@ -1,4 +1,5 @@
-﻿namespace Course.Entities
+﻿using System.Globalization;
+namespace Course.Entities
 {
     internal class UsedProduct : Product
     {
@@ -15,7 +16,7 @@
 
         public override string PriceTag()
         {
-            return Name + " (used) $ " + Price + $"(Manufacture date: {ManufactureDate.ToString("dd/MM/yyyy")})";
+            return Name + " (used) $ " + Price.ToString("F2", CultureInfo.InvariantCulture) + $"(Manufacture date: {ManufactureDate.ToString("dd/MM/yyyy")})";
         }
     }
 }
